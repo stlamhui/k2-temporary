@@ -82,18 +82,6 @@ jobs:
           cd $HOME/openwrt
           make defconfig
 
-# ========== 新增 SSH 交互步骤（可让用户手动执行 make menuconfig） ==========
-      # 功能：启动 tmate 会话，在日志中显示 SSH 连接命令。用户连接后，
-      #       可进入 $HOME/openwrt 目录，运行 make menuconfig 修改配置。
-      #       修改完成后保存退出，工作流继续后续编译。
-      - name: Setup tmate session for manual configuration
-        uses: mxschmitt/action-tmate@v3
-        with:
-          limit-access-to-actor: true   # 仅允许触发工作流的用户连接
-          timeout-minutes: 60            # 1小时后自动超时继续（可调整）
-          working-directory: $HOME/openwrt   # 进入 OpenWrt 源码目录
-      # ==========================================================================
-
       - name: Build firmware
         run: |
           cd $HOME/openwrt
