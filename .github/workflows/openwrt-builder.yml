@@ -97,7 +97,7 @@ jobs:
       - name: Build firmware
         run: |
           cd $HOME/openwrt
-          make -j$(nproc) || make -j1 V=s
+          make -j$(nproc) || make -j4 V=s
 
       # ---- 步骤11：收集并上传固件（修正路径和缩进） ----
       - name: Collect firmware files
