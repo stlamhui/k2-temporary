@@ -6,7 +6,7 @@ on:
   #   - cron: '0 20 * * 0'
 
 env:
-  REPO_URL: https://github.com/immortalwrt/immortalwrt
+  REPO_URL: https://github.com/padavanonly/immortalwrt-mt798x-6.6
   REPO_BRANCH: openwrt-24.10
   CONFIG_FILE: configs/k2.config
   DIY_PART1: scripts/diy-part1.sh
